@@ -13,8 +13,8 @@
 		1AAD1736252DADEB00A086DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD1734252DADEB00A086DC /* Main.storyboard */; };
 		1AAD1738252DADED00A086DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD1737252DADED00A086DC /* Assets.xcassets */; };
 		1AAD173B252DADED00A086DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD1739252DADED00A086DC /* LaunchScreen.storyboard */; };
-		1AAD1746252DADED00A086DC /* MyNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1745252DADED00A086DC /* MyNewsTests.swift */; };
-		1AAD1751252DADED00A086DC /* MyNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1750252DADED00A086DC /* MyNewsUITests.swift */; };
+		1AAD1746252DADED00A086DC /* DevFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1745252DADED00A086DC /* DevFeedTests.swift */; };
+		1AAD1751252DADED00A086DC /* DevFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1750252DADED00A086DC /* DevFeedUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1AAD172B252DADEB00A086DC /* MyNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAD172B252DADEB00A086DC /* DevFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAD172E252DADEB00A086DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AAD1730252DADEB00A086DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1AAD1732252DADEB00A086DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,11 +43,11 @@
 		1AAD1737252DADED00A086DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AAD173A252DADED00A086DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AAD173C252DADED00A086DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AAD1741252DADED00A086DC /* MyNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AAD1745252DADED00A086DC /* MyNewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewsTests.swift; sourceTree = "<group>"; };
+		1AAD1741252DADED00A086DC /* DevFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAD1745252DADED00A086DC /* DevFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevFeedTests.swift; sourceTree = "<group>"; };
 		1AAD1747252DADED00A086DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AAD174C252DADED00A086DC /* MyNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AAD1750252DADED00A086DC /* MyNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewsUITests.swift; sourceTree = "<group>"; };
+		1AAD174C252DADED00A086DC /* DevFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAD1750252DADED00A086DC /* DevFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevFeedUITests.swift; sourceTree = "<group>"; };
 		1AAD1752252DADED00A086DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,9 +79,9 @@
 		1AAD1722252DADEB00A086DC = {
 			isa = PBXGroup;
 			children = (
-				1AAD172D252DADEB00A086DC /* MyNews */,
-				1AAD1744252DADED00A086DC /* MyNewsTests */,
-				1AAD174F252DADED00A086DC /* MyNewsUITests */,
+				1AAD172D252DADEB00A086DC /* DevFeed */,
+				1AAD1744252DADED00A086DC /* DevFeedTests */,
+				1AAD174F252DADED00A086DC /* DevFeedUITests */,
 				1AAD172C252DADEB00A086DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,14 +89,14 @@
 		1AAD172C252DADEB00A086DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AAD172B252DADEB00A086DC /* MyNews.app */,
-				1AAD1741252DADED00A086DC /* MyNewsTests.xctest */,
-				1AAD174C252DADED00A086DC /* MyNewsUITests.xctest */,
+				1AAD172B252DADEB00A086DC /* DevFeed.app */,
+				1AAD1741252DADED00A086DC /* DevFeedTests.xctest */,
+				1AAD174C252DADED00A086DC /* DevFeedUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1AAD172D252DADEB00A086DC /* MyNews */ = {
+		1AAD172D252DADEB00A086DC /* DevFeed */ = {
 			isa = PBXGroup;
 			children = (
 				1AAD172E252DADEB00A086DC /* AppDelegate.swift */,
@@ -107,33 +107,33 @@
 				1AAD1739252DADED00A086DC /* LaunchScreen.storyboard */,
 				1AAD173C252DADED00A086DC /* Info.plist */,
 			);
-			path = MyNews;
+			path = DevFeed;
 			sourceTree = "<group>";
 		};
-		1AAD1744252DADED00A086DC /* MyNewsTests */ = {
+		1AAD1744252DADED00A086DC /* DevFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				1AAD1745252DADED00A086DC /* MyNewsTests.swift */,
+				1AAD1745252DADED00A086DC /* DevFeedTests.swift */,
 				1AAD1747252DADED00A086DC /* Info.plist */,
 			);
-			path = MyNewsTests;
+			path = DevFeedTests;
 			sourceTree = "<group>";
 		};
-		1AAD174F252DADED00A086DC /* MyNewsUITests */ = {
+		1AAD174F252DADED00A086DC /* DevFeedUITests */ = {
 			isa = PBXGroup;
 			children = (
-				1AAD1750252DADED00A086DC /* MyNewsUITests.swift */,
+				1AAD1750252DADED00A086DC /* DevFeedUITests.swift */,
 				1AAD1752252DADED00A086DC /* Info.plist */,
 			);
-			path = MyNewsUITests;
+			path = DevFeedUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1AAD172A252DADEB00A086DC /* MyNews */ = {
+		1AAD172A252DADEB00A086DC /* DevFeed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AAD1755252DADED00A086DC /* Build configuration list for PBXNativeTarget "MyNews" */;
+			buildConfigurationList = 1AAD1755252DADED00A086DC /* Build configuration list for PBXNativeTarget "DevFeed" */;
 			buildPhases = (
 				1AAD1727252DADEB00A086DC /* Sources */,
 				1AAD1728252DADEB00A086DC /* Frameworks */,
@@ -143,14 +143,14 @@
 			);
 			dependencies = (
 			);
-			name = MyNews;
+			name = DevFeed;
 			productName = MyNews;
-			productReference = 1AAD172B252DADEB00A086DC /* MyNews.app */;
+			productReference = 1AAD172B252DADEB00A086DC /* DevFeed.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1AAD1740252DADED00A086DC /* MyNewsTests */ = {
+		1AAD1740252DADED00A086DC /* DevFeedTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AAD1758252DADED00A086DC /* Build configuration list for PBXNativeTarget "MyNewsTests" */;
+			buildConfigurationList = 1AAD1758252DADED00A086DC /* Build configuration list for PBXNativeTarget "DevFeedTests" */;
 			buildPhases = (
 				1AAD173D252DADED00A086DC /* Sources */,
 				1AAD173E252DADED00A086DC /* Frameworks */,
@@ -161,14 +161,14 @@
 			dependencies = (
 				1AAD1743252DADED00A086DC /* PBXTargetDependency */,
 			);
-			name = MyNewsTests;
+			name = DevFeedTests;
 			productName = MyNewsTests;
-			productReference = 1AAD1741252DADED00A086DC /* MyNewsTests.xctest */;
+			productReference = 1AAD1741252DADED00A086DC /* DevFeedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1AAD174B252DADED00A086DC /* MyNewsUITests */ = {
+		1AAD174B252DADED00A086DC /* DevFeedUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AAD175B252DADED00A086DC /* Build configuration list for PBXNativeTarget "MyNewsUITests" */;
+			buildConfigurationList = 1AAD175B252DADED00A086DC /* Build configuration list for PBXNativeTarget "DevFeedUITests" */;
 			buildPhases = (
 				1AAD1748252DADED00A086DC /* Sources */,
 				1AAD1749252DADED00A086DC /* Frameworks */,
@@ -179,9 +179,9 @@
 			dependencies = (
 				1AAD174E252DADED00A086DC /* PBXTargetDependency */,
 			);
-			name = MyNewsUITests;
+			name = DevFeedUITests;
 			productName = MyNewsUITests;
-			productReference = 1AAD174C252DADED00A086DC /* MyNewsUITests.xctest */;
+			productReference = 1AAD174C252DADED00A086DC /* DevFeedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +207,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1AAD1726252DADEB00A086DC /* Build configuration list for PBXProject "MyNews" */;
+			buildConfigurationList = 1AAD1726252DADEB00A086DC /* Build configuration list for PBXProject "DevFeed" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,9 +220,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1AAD172A252DADEB00A086DC /* MyNews */,
-				1AAD1740252DADED00A086DC /* MyNewsTests */,
-				1AAD174B252DADED00A086DC /* MyNewsUITests */,
+				1AAD172A252DADEB00A086DC /* DevFeed */,
+				1AAD1740252DADED00A086DC /* DevFeedTests */,
+				1AAD174B252DADED00A086DC /* DevFeedUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AAD1746252DADED00A086DC /* MyNewsTests.swift in Sources */,
+				1AAD1746252DADED00A086DC /* DevFeedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AAD1751252DADED00A086DC /* MyNewsUITests.swift in Sources */,
+				1AAD1751252DADED00A086DC /* DevFeedUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,12 +286,12 @@
 /* Begin PBXTargetDependency section */
 		1AAD1743252DADED00A086DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1AAD172A252DADEB00A086DC /* MyNews */;
+			target = 1AAD172A252DADEB00A086DC /* DevFeed */;
 			targetProxy = 1AAD1742252DADED00A086DC /* PBXContainerItemProxy */;
 		};
 		1AAD174E252DADED00A086DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1AAD172A252DADEB00A086DC /* MyNews */;
+			target = 1AAD172A252DADEB00A086DC /* DevFeed */;
 			targetProxy = 1AAD174D252DADED00A086DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -435,12 +435,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MyNews/Info.plist;
+				INFOPLIST_FILE = DevFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.MyNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.DevFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,12 +452,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MyNews/Info.plist;
+				INFOPLIST_FILE = DevFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.MyNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.DevFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -470,18 +470,18 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MyNewsTests/Info.plist;
+				INFOPLIST_FILE = DevFeedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.MyNewsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.DevFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyNews.app/MyNews";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevFeed.app/DevFeed";
 			};
 			name = Debug;
 		};
@@ -491,18 +491,18 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MyNewsTests/Info.plist;
+				INFOPLIST_FILE = DevFeedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.MyNewsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.DevFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyNews.app/MyNews";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevFeed.app/DevFeed";
 			};
 			name = Release;
 		};
@@ -511,17 +511,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MyNewsUITests/Info.plist;
+				INFOPLIST_FILE = DevFeedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.MyNewsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.DevFeedUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MyNews;
+				TEST_TARGET_NAME = DevFeed;
 			};
 			name = Debug;
 		};
@@ -530,24 +530,24 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MyNewsUITests/Info.plist;
+				INFOPLIST_FILE = DevFeedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.MyNewsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yurim.DevFeedUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MyNews;
+				TEST_TARGET_NAME = DevFeed;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1AAD1726252DADEB00A086DC /* Build configuration list for PBXProject "MyNews" */ = {
+		1AAD1726252DADEB00A086DC /* Build configuration list for PBXProject "DevFeed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AAD1753252DADED00A086DC /* Debug */,
@@ -556,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1AAD1755252DADED00A086DC /* Build configuration list for PBXNativeTarget "MyNews" */ = {
+		1AAD1755252DADED00A086DC /* Build configuration list for PBXNativeTarget "DevFeed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AAD1756252DADED00A086DC /* Debug */,
@@ -565,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1AAD1758252DADED00A086DC /* Build configuration list for PBXNativeTarget "MyNewsTests" */ = {
+		1AAD1758252DADED00A086DC /* Build configuration list for PBXNativeTarget "DevFeedTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AAD1759252DADED00A086DC /* Debug */,
@@ -574,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1AAD175B252DADED00A086DC /* Build configuration list for PBXNativeTarget "MyNewsUITests" */ = {
+		1AAD175B252DADED00A086DC /* Build configuration list for PBXNativeTarget "DevFeedUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AAD175C252DADED00A086DC /* Debug */,

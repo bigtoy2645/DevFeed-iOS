@@ -1,6 +1,6 @@
 //
-//  MyNewsUITests.swift
-//  MyNewsUITests
+//  DevFeedUITests.swift
+//  DevFeedUITests
 //
 //  Created by yurim on 2020/10/07.
 //  Copyright © 2020 yurim. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class MyNewsUITests: XCTestCase {
+class DevFeedUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
