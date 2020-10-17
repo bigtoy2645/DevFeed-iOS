@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
-
-
+    
+    @IBAction func buttonDidTap(_ sender: UIButton) {
+        let feedVC = FeedViewController(nibName: "FeedViewController", bundle: nil)
+        self.navigationController?.pushViewController(feedVC, animated: true)
+    }
 }
+
 

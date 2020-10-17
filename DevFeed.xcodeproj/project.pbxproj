@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1A651125398371008829B6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A650F25398371008829B6 /* FeedViewController.swift */; };
+		1A1A651225398371008829B6 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A651025398371008829B6 /* FeedViewController.xib */; };
+		1A1A6514253983F2008829B6 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A6513253983F2008829B6 /* Feed.swift */; };
+		1A1A6517253AFA18008829B6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1A6516253AFA18008829B6 /* WebKit.framework */; };
 		1AAD172F252DADEB00A086DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD172E252DADEB00A086DC /* AppDelegate.swift */; };
 		1AAD1731252DADEB00A086DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1730252DADEB00A086DC /* SceneDelegate.swift */; };
 		1AAD1733252DADEB00A086DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1732252DADEB00A086DC /* ViewController.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A1A650F25398371008829B6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		1A1A651025398371008829B6 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		1A1A6513253983F2008829B6 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		1A1A6516253AFA18008829B6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1AAD172B252DADEB00A086DC /* DevFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAD172E252DADEB00A086DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AAD1730252DADEB00A086DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1A6517253AFA18008829B6 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +85,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1A650A25398331008829B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A6513253983F2008829B6 /* Feed.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1A1A650B25398339008829B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD1732252DADEB00A086DC /* ViewController.swift */,
+				1A1A650F25398371008829B6 /* FeedViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1A1A650C2539833E008829B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD1734252DADEB00A086DC /* Main.storyboard */,
+				1AAD1739252DADED00A086DC /* LaunchScreen.storyboard */,
+				1A1A651025398371008829B6 /* FeedViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1A1A650D25398341008829B6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD1737252DADED00A086DC /* Assets.xcassets */,
+				1AAD173C252DADED00A086DC /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1A1A650E25398346008829B6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD172E252DADEB00A086DC /* AppDelegate.swift */,
+				1AAD1730252DADEB00A086DC /* SceneDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		1A1A6515253AFA18008829B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A6516253AFA18008829B6 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1AAD1722252DADEB00A086DC = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +145,7 @@
 				1AAD1744252DADED00A086DC /* DevFeedTests */,
 				1AAD174F252DADED00A086DC /* DevFeedUITests */,
 				1AAD172C252DADEB00A086DC /* Products */,
+				1A1A6515253AFA18008829B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +162,11 @@
 		1AAD172D252DADEB00A086DC /* DevFeed */ = {
 			isa = PBXGroup;
 			children = (
-				1AAD172E252DADEB00A086DC /* AppDelegate.swift */,
-				1AAD1730252DADEB00A086DC /* SceneDelegate.swift */,
-				1AAD1732252DADEB00A086DC /* ViewController.swift */,
-				1AAD1734252DADEB00A086DC /* Main.storyboard */,
-				1AAD1737252DADED00A086DC /* Assets.xcassets */,
-				1AAD1739252DADED00A086DC /* LaunchScreen.storyboard */,
-				1AAD173C252DADED00A086DC /* Info.plist */,
+				1A1A650E25398346008829B6 /* AppDelegate */,
+				1A1A650B25398339008829B6 /* Controllers */,
+				1A1A650A25398331008829B6 /* Models */,
+				1A1A650D25398341008829B6 /* Resources */,
+				1A1A650C2539833E008829B6 /* Views */,
 			);
 			path = DevFeed;
 			sourceTree = "<group>";
@@ -234,6 +295,7 @@
 			files = (
 				1AAD173B252DADED00A086DC /* LaunchScreen.storyboard in Resources */,
 				1AAD1738252DADED00A086DC /* Assets.xcassets in Resources */,
+				1A1A651225398371008829B6 /* FeedViewController.xib in Resources */,
 				1AAD1736252DADEB00A086DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAD1733252DADEB00A086DC /* ViewController.swift in Sources */,
+				1A1A6514253983F2008829B6 /* Feed.swift in Sources */,
 				1AAD172F252DADEB00A086DC /* AppDelegate.swift in Sources */,
+				1A1A651125398371008829B6 /* FeedViewController.swift in Sources */,
 				1AAD1731252DADEB00A086DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
