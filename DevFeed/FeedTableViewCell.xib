@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="116" id="KGk-i7-Jjw" customClass="FeedTableViewCell" customModule="DevFeed" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="463" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="463" height="116"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Deadline extended for app updates using UIWebView" translatesAutoresizingMaskIntoConstraints="NO" id="POv-lT-8Av">
+                        <rect key="frame" x="20" y="10" width="423" height="68"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="2020-10-19 15:09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gc-ql-AsA">
+                        <rect key="frame" x="20" y="88" width="423" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5gc-ql-AsA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Kxt-dx-3ST"/>
+                    <constraint firstAttribute="bottom" secondItem="5gc-ql-AsA" secondAttribute="bottom" constant="10" id="ZO4-wb-XCl"/>
+                    <constraint firstAttribute="trailing" secondItem="5gc-ql-AsA" secondAttribute="trailing" constant="20" id="gTb-Ic-Exd"/>
+                    <constraint firstAttribute="trailing" secondItem="POv-lT-8Av" secondAttribute="trailing" constant="20" id="hkz-zt-mBs"/>
+                    <constraint firstItem="POv-lT-8Av" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="kG0-cc-Qee"/>
+                    <constraint firstItem="POv-lT-8Av" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tPm-mW-AfZ"/>
+                    <constraint firstItem="5gc-ql-AsA" firstAttribute="top" secondItem="POv-lT-8Av" secondAttribute="bottom" constant="10" id="vpE-tm-UTv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="pubDate" destination="5gc-ql-AsA" id="ywC-Yk-Q9M"/>
+                <outlet property="title" destination="POv-lT-8Av" id="k5o-rc-VCU"/>
+            </connections>
+            <point key="canvasLocation" x="241.30434782608697" y="162.72321428571428"/>
+        </tableViewCell>
+    </objects>
+</document>
