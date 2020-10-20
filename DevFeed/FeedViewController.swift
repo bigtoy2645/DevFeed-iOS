@@ -22,16 +22,24 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
     
     @IBOutlet weak var tblFeed: UITableView!
     
+    var viewTitle: String?
     var feed: [Feed] = []
     var currentElement: element?
     var currentFeed = Feed()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Cell 등록
         let nibName = UINib(nibName: "FeedTableViewCell", bundle: nil)
         tblFeed.register(nibName, forCellReuseIdentifier: "FeedCell")
         
+        // Navigation Bar 라인 제거
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        // TODO - 리팩토링
+        self.title = "Apple Developer News"
         parseAppleDevNews()
     }
     
@@ -87,10 +95,13 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
     }
     
     // MARK: - UITableViewDelegate
+    
+    /* cell 개수 */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feed.count
     }
     
+    /* cell 그리기 */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
         cell.title.text = feed[indexPath.row].title
