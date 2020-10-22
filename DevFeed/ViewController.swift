@@ -50,8 +50,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     /* cell 선택 시 */
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let feedVC = self.storyboard?.instantiateViewController(identifier: "NewsFeed") as? FeedViewController else { return }
-        self.navigationController?.pushViewController(feedVC, animated: true)
+        if indexPath.row == 0 {
+            guard let addRSSVC = self.storyboard?.instantiateViewController(identifier: "AddRSS") as? AddRSSViewController else { return }
+            present(addRSSVC, animated: true, completion: nil)
+        } else {
+            guard let feedVC = self.storyboard?.instantiateViewController(identifier: "NewsFeed") as? FeedViewController else { return }
+            self.navigationController?.pushViewController(feedVC, animated: true)
+        }
     }
     
     // MARK: - UITableViewDelegate
