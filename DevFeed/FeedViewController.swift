@@ -73,6 +73,8 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
     /* 종료 Tag */
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if element(rawValue: elementName) == element.item {
+            currentFeed.title = currentFeed.title.replacingOccurrences(of: "&nbsp;", with: " ")
+            
             feed.append(currentFeed)
         }
         currentElement = nil
@@ -104,14 +106,27 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
     /* cell 그리기 */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
+        
         cell.title.text = feed[indexPath.row].title
         cell.title.sizeToFit()
+        cell.pubDate.text = feed[indexPath.row].pubDate
+        cell.pubDate.sizeToFit()
+        
         // TODO - Feed 형식일 경우 WebView 표시
 //        let str = "<div style=\"font-family: -apple-system, BlinkMacSystemFont, sans-serif;\">" + feed[indexPath.row].description
 //        cell.webView.loadHTMLString(str, baseURL: nil)
 //        cell.webView.sizeToFit()
         
         return cell
+    }
+    
+    /* cell 선택 시 */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // WebView 표시
+        guard let webVC = self.storyboard?.instantiateViewController(identifier: "DetailWebView") as? WebViewController else { return }
+        webVC.htmlString = feed[indexPath.row].description
+        
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     // MARK: - Actions

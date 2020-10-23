@@ -14,6 +14,7 @@
 		1A1A651E253C9135008829B6 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A651C253C9135008829B6 /* FeedTableViewCell.xib */; };
 		1A1A6522253D84BB008829B6 /* SubscribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A6521253D84BB008829B6 /* SubscribeCell.swift */; };
 		1A1A6527253EC03A008829B6 /* AddRSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A6526253EC03A008829B6 /* AddRSSViewController.swift */; };
+		1A1A652925431B00008829B6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A652825431B00008829B6 /* WebViewController.swift */; };
 		1AAD172F252DADEB00A086DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD172E252DADEB00A086DC /* AppDelegate.swift */; };
 		1AAD1731252DADEB00A086DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1730252DADEB00A086DC /* SceneDelegate.swift */; };
 		1AAD1733252DADEB00A086DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1732252DADEB00A086DC /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		1A1A651C253C9135008829B6 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 		1A1A6521253D84BB008829B6 /* SubscribeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeCell.swift; sourceTree = "<group>"; };
 		1A1A6526253EC03A008829B6 /* AddRSSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRSSViewController.swift; sourceTree = "<group>"; };
+		1A1A652825431B00008829B6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1AAD172B252DADEB00A086DC /* DevFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAD172E252DADEB00A086DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AAD1730252DADEB00A086DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				1AAD1732252DADEB00A086DC /* ViewController.swift */,
 				1A1A650F25398371008829B6 /* FeedViewController.swift */,
 				1A1A6526253EC03A008829B6 /* AddRSSViewController.swift */,
+				1A1A652825431B00008829B6 /* WebViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAD1733252DADEB00A086DC /* ViewController.swift in Sources */,
+				1A1A652925431B00008829B6 /* WebViewController.swift in Sources */,
 				1A1A651D253C9135008829B6 /* FeedTableViewCell.swift in Sources */,
 				1A1A6514253983F2008829B6 /* Feed.swift in Sources */,
 				1AAD172F252DADEB00A086DC /* AppDelegate.swift in Sources */,

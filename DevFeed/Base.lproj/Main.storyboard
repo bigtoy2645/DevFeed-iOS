@@ -123,7 +123,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UpV-AG-IDX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UpV-AG-IDX">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <sections/>
                                 <connections>
@@ -153,6 +153,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kB-mv-s3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2800" y="96.428571428571431"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Lym-aq-plx">
+            <objects>
+                <viewController storyboardIdentifier="DetailWebView" id="A0E-Yq-qRq" customClass="WebViewController" customModule="DevFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TMw-9C-zJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DM9-rd-y1m">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DM9-rd-y1m" firstAttribute="leading" secondItem="nnP-tA-yb7" secondAttribute="leading" id="0IU-1z-dhS"/>
+                            <constraint firstAttribute="bottom" secondItem="DM9-rd-y1m" secondAttribute="bottom" id="HnO-3U-V1l"/>
+                            <constraint firstItem="nnP-tA-yb7" firstAttribute="trailing" secondItem="DM9-rd-y1m" secondAttribute="trailing" id="INI-0L-10a"/>
+                            <constraint firstItem="DM9-rd-y1m" firstAttribute="top" secondItem="nnP-tA-yb7" secondAttribute="top" id="u3M-Yf-DHH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nnP-tA-yb7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WzV-fo-09h">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="BLl-Bb-Sg7">
+                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="DM9-rd-y1m" id="72Y-47-l6K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pok-LK-jsI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4428.985507246377" y="95.758928571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QVT-AF-tie">
@@ -197,6 +236,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJp-2P-mQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1889.8550724637682" y="95.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ElC-m8-6op">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8pP-ep-A96" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iFL-03-FGX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="A0E-Yq-qRq" kind="relationship" relationship="rootViewController" id="j4r-Xa-hSb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0U-fo-xHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3518.840579710145" y="95.758928571428569"/>
         </scene>
     </scenes>
     <resources>

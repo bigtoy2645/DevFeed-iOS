@@ -77,7 +77,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     /* section 개수 */
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return rss.count - 1
     }
     
     /* section 타이틀 */
