@@ -40,24 +40,25 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
         
         // TODO - 리팩토링
         self.title = "Apple Developer News"
-        parseAppleDevNews()
+        
+        // Apple Developer News 파싱
+        DispatchQueue.global().async {
+            let rssURL = "https://developer.apple.com/news/rss/news.rss"
+            guard let encoded = rssURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: encoded) else { return }
+            
+            let parser = XMLParser(contentsOf: url)
+            parser?.delegate = self
+            
+            DispatchQueue.main.async {
+                if false == parser?.parse() {
+                    self.tblFeed.setEmptyView(title: "Failed to connect network.")
+                }
+                self.tblFeed.reloadData()
+            }
+        }
     }
     
     // MARK: - XMLParserDelegate
-    
-    /* Apple Developer News 파싱 */
-    func parseAppleDevNews() {
-        let rssURL = "https://developer.apple.com/news/rss/news.rss"
-        guard let encoded = rssURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: encoded) else { return }
-        
-        let parser = XMLParser(contentsOf: url)
-        parser?.delegate = self
-        if true == parser?.parse() {
-            print("parsing success!")
-        } else {
-            print("parsing failure")
-        }
-    }
     
     /* 시작 Tag */
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
@@ -125,9 +126,28 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
         // WebView 표시
         guard let webVC = self.storyboard?.instantiateViewController(identifier: "DetailWebView") as? WebViewController else { return }
         webVC.htmlString = feed[indexPath.row].description
-        
         self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     // MARK: - Actions
+}
+
+extension UITableView {
+    /* 오류 화면 */
+    func setEmptyView(title: String) {
+        let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
+        let titleLabel = UILabel()
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.textColor = UIColor.systemGray
+        titleLabel.font = UIFont.systemFont(ofSize: 18)
+        emptyView.addSubview(titleLabel)
+        
+        titleLabel.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor).isActive = true
+        titleLabel.text = title
+        
+        self.backgroundView = emptyView
+        self.separatorStyle = .none
+    }
 }
