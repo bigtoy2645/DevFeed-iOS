@@ -25,6 +25,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Navigation 설정
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .label
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
     // MARK: - UICollectionViewDelegate

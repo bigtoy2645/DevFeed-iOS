@@ -34,9 +34,12 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
         let nibName = UINib(nibName: "FeedTableViewCell", bundle: nil)
         tblFeed.register(nibName, forCellReuseIdentifier: "FeedCell")
         
-        // Navigation Bar 라인 제거
+        // Navigation 설정
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .label
+        self.navigationItem.backBarButtonItem = backBarButtonItem
         
         // TODO - 리팩토링
         self.title = "Apple Developer News"
@@ -125,7 +128,7 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // WebView 표시
         guard let webVC = self.storyboard?.instantiateViewController(identifier: "DetailWebView") as? WebViewController else { return }
-        webVC.htmlString = feed[indexPath.row].description
+        webVC.feed = feed[indexPath.row]
         self.navigationController?.pushViewController(webVC, animated: true)
     }
     
