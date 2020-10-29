@@ -13,5 +13,6 @@ struct Feed {
     var description = ""
     var pubDate = ""
     var link = ""
+    var isRead = false
 }
 

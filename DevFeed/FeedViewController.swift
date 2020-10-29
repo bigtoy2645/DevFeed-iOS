@@ -61,6 +61,10 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tblFeed.reloadData()
+    }
+    
     // MARK: - XMLParserDelegate
     
     /* 시작 Tag */
@@ -115,6 +119,7 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
         cell.title.sizeToFit()
         cell.pubDate.text = feed[indexPath.row].pubDate
         cell.pubDate.sizeToFit()
+        cell.isRead = feed[indexPath.row].isRead
         
         // TODO - Feed 형식일 경우 WebView 표시
 //        let str = "<div style=\"font-family: -apple-system, BlinkMacSystemFont, sans-serif;\">" + feed[indexPath.row].description
@@ -128,6 +133,7 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // WebView 표시
         guard let webVC = self.storyboard?.instantiateViewController(identifier: "DetailWebView") as? WebViewController else { return }
+        feed[indexPath.row].isRead = true
         webVC.feed = feed[indexPath.row]
         self.navigationController?.pushViewController(webVC, animated: true)
     }
