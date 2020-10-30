@@ -16,6 +16,7 @@
 		1A1A6527253EC03A008829B6 /* AddRSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A6526253EC03A008829B6 /* AddRSSViewController.swift */; };
 		1A1A652925431B00008829B6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A652825431B00008829B6 /* WebViewController.swift */; };
 		1A1A653325486553008829B6 /* WKWebViewSearch.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A653225486553008829B6 /* WKWebViewSearch.js */; };
+		1A1A6538254B166B008829B6 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A6537254B166B008829B6 /* appIcon.png */; };
 		1AAD172F252DADEB00A086DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD172E252DADEB00A086DC /* AppDelegate.swift */; };
 		1AAD1731252DADEB00A086DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1730252DADEB00A086DC /* SceneDelegate.swift */; };
 		1AAD1733252DADEB00A086DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1732252DADEB00A086DC /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		1A1A6526253EC03A008829B6 /* AddRSSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRSSViewController.swift; sourceTree = "<group>"; };
 		1A1A652825431B00008829B6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1A1A653225486553008829B6 /* WKWebViewSearch.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = WKWebViewSearch.js; sourceTree = "<group>"; };
+		1A1A6537254B166B008829B6 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = res/appIcon.png; sourceTree = "<group>"; };
 		1AAD172B252DADEB00A086DC /* DevFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAD172E252DADEB00A086DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AAD1730252DADEB00A086DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		1A1A650D25398341008829B6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1A1A6537254B166B008829B6 /* appIcon.png */,
 				1AAD1737252DADED00A086DC /* Assets.xcassets */,
 				1AAD173C252DADED00A086DC /* Info.plist */,
 				1A1A653225486553008829B6 /* WKWebViewSearch.js */,
@@ -310,6 +313,7 @@
 			files = (
 				1AAD173B252DADED00A086DC /* LaunchScreen.storyboard in Resources */,
 				1A1A651E253C9135008829B6 /* FeedTableViewCell.xib in Resources */,
+				1A1A6538254B166B008829B6 /* appIcon.png in Resources */,
 				1AAD1738252DADED00A086DC /* Assets.xcassets in Resources */,
 				1A1A653325486553008829B6 /* WKWebViewSearch.js in Resources */,
 				1AAD1736252DADEB00A086DC /* Main.storyboard in Resources */,
