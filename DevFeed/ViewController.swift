@@ -12,7 +12,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var colRSS: UICollectionView!
     @IBOutlet weak var tblNews: UITableView!
     
-    var rss: [String] = ["", "https://developer.apple.com/news/rss/news.rss"]
+    var rss: [String] = ["", "https://developer.apple.com/news/rss/news.rss",
+                         "https://www.raywenderlich.com/ios/feed", "https://swift.org/atom.xml?format=xml"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
