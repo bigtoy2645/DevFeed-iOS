@@ -73,8 +73,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     /* cell 그리기 */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-        cell.title.sizeToFit()
-        cell.pubDate.sizeToFit()
+        let feed = Feed(title: "new", description: "description", pubDate: "2020", link: "", isRead: false)
+        cell.updateValue(feed: feed)
         
         return cell
     }
