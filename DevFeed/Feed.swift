@@ -14,5 +14,15 @@ struct Feed {
     var pubDate = ""
     var link = ""
     var isRead = false
+    var dateFormat = ""
 }
 
+struct RSS {
+    let name: String
+    let link: String
+    
+    let startTag: String
+    let titleTag: String
+    let dateTag: String
+    let linkTag: String
+}
