@@ -11,7 +11,7 @@ import UIKit
 class FeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UITextView!
-    @IBOutlet weak var pubDate: UILabel!
+    @IBOutlet weak var date: UILabel!
     
     let badgeView: UIView = {
         let view = UIView()
@@ -43,14 +43,14 @@ class FeedTableViewCell: UITableViewCell {
         // Label 설정
         title.text = feed.title
         title.sizeToFit()
-        pubDate.text = feed.pubDate
-        pubDate.sizeToFit()
+        date.text = feed.date
+        date.sizeToFit()
         
         // 읽음 처리
         if feed.isRead == true {
             badgeView.isHidden = true
             title.textColor = UIColor.systemGray2
-            pubDate.textColor = UIColor.systemGray2
+            date.textColor = UIColor.systemGray2
         }
     }
 }

@@ -11,21 +11,12 @@ import Foundation
 import WebKit
 
 class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, UITableViewDataSource {
-
-    enum element: String {
-        case item = "item"
-        case title = "title"
-        case description = "description"
-        case pubDate = "pubDate"
-        case link = "link"
-    }
-    
     @IBOutlet weak var tblFeed: UITableView!
     
-    var viewTitle: String?
+    var rss: RSS = RSS(name: "", link: "", dateFormat: "", startTag: "", titleTag: "", dateTag: "", linkTag: "")
     var feed: [Feed] = []
-    var currentElement: element?
-    var currentFeed = Feed()
+    var currentTag: String?
+    var currentFeed = Feed(title: "", date: "", link: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,19 +26,16 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
         tblFeed.register(nibName, forCellReuseIdentifier: "FeedCell")
         
         // Navigation 설정
+        self.title = rss.name
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         backBarButtonItem.tintColor = .label
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
-        // TODO - 리팩토링
-        self.title = "Apple Developer News"
-        
         // Apple Developer News 파싱
         DispatchQueue.global().async {
-            let rssURL = "https://developer.apple.com/news/rss/news.rss"
-            guard let encoded = rssURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: encoded) else { return }
+            guard let encoded = self.rss.link.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: encoded) else { return }
             
             let parser = XMLParser(contentsOf: url)
             parser?.delegate = self
@@ -69,44 +57,40 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
     
     /* 시작 Tag */
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        currentElement = element(rawValue: elementName)
-        if currentElement == element.item {
+        currentTag = elementName
+        if currentTag == rss.startTag {
             currentFeed.title = ""
-            currentFeed.description = ""
-            currentFeed.pubDate = ""
+            currentFeed.date = ""
             currentFeed.link = ""
         }
     }
     
     /* 종료 Tag */
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if element(rawValue: elementName) == element.item {
+        if elementName == rss.startTag {
             currentFeed.title = currentFeed.title.replacingOccurrences(of: "&nbsp;", with: " ")
             let inputFormatter = DateFormatter()
             let outputFormatter = DateFormatter()
             
-            // Mon, 26 Oct 2020 12:39:59 PDT
-            inputFormatter.dateFormat = "EEE, dd MMM yyyy hh:mm:ss z"
+            inputFormatter.dateFormat = rss.dateFormat
             outputFormatter.dateStyle = .long
-            if let date = inputFormatter.date(from: currentFeed.pubDate) {
-                currentFeed.pubDate = outputFormatter.string(from: date)
+            if let date = inputFormatter.date(from: currentFeed.date) {
+                currentFeed.date = outputFormatter.string(from: date)
             }
             
             feed.append(currentFeed)
         }
-        currentElement = nil
+        currentTag = nil
     }
     
     /* Tag에 해당하는 문자열 */
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        switch currentElement {
-        case .title:
+        switch currentTag {
+        case rss.titleTag:
             currentFeed.title += string
-        case .description:
-            currentFeed.description += string
-        case .pubDate:
-            currentFeed.pubDate += string
-        case .link:
+        case rss.dateTag:
+            currentFeed.date += string
+        case rss.linkTag:
             currentFeed.link += string
         default:
             return

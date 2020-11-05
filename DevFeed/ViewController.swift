@@ -12,8 +12,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var colRSS: UICollectionView!
     @IBOutlet weak var tblNews: UITableView!
     
-    var rss: [String] = ["", "https://developer.apple.com/news/rss/news.rss",
-                         "https://www.raywenderlich.com/ios/feed", "https://swift.org/atom.xml?format=xml"]
+    var rssList: [RSS] = [RSS(name: "", link: "", dateFormat: "", startTag: "", titleTag: "", dateTag: "", linkTag: ""),
+                          RSS(name: "Apple Developer News", link: "https://developer.apple.com/news/rss/news.rss", dateFormat: "EEE, dd MMM yyyy HH:mm:ss z", startTag: "item", titleTag: "title", dateTag: "pubDate", linkTag: "link"),
+                          RSS(name: "Ray Wenderlich", link: "https://www.raywenderlich.com/ios/feed", dateFormat: "yyyy-MM-dd'T'HH:mm:ss'Z'", startTag: "entry", titleTag: "title", dateTag: "updated", linkTag: "id")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     /* cell 개수 */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return rss.count
+        return rssList.count
     }
     
     /* cell 그리기 */
@@ -43,7 +44,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubscribeCell", for: indexPath) as! SubscribeCell
         // Favicon 불러오기
         if indexPath.row != 0 {
-            let url = URL(string: "https://www.google.com/s2/favicons?sz=64&domain=" + "\(rss[indexPath.row])")
+            let url = URL(string: "https://www.google.com/s2/favicons?sz=64&domain=" + "\(rssList[indexPath.row].link)")
             if let data = try? Data(contentsOf: url!) {
                 cell.thumbnail.image = UIImage(data: data)
             }
@@ -59,6 +60,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             present(addRSSVC, animated: true, completion: nil)
         } else {
             guard let feedVC = self.storyboard?.instantiateViewController(identifier: "NewsFeed") as? FeedViewController else { return }
+            feedVC.rss = rssList[indexPath.row]
             self.navigationController?.pushViewController(feedVC, animated: true)
         }
     }
@@ -67,13 +69,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     /* cell 개수 */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     /* cell 그리기 */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-        let feed = Feed(title: "new", description: "description", pubDate: "2020", link: "", isRead: false)
+        let feed = Feed(title: "new", date: "2020", link: "", isRead: false)
         cell.updateValue(feed: feed)
         
         return cell
@@ -81,12 +83,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     /* section 개수 */
     func numberOfSections(in tableView: UITableView) -> Int {
-        return rss.count - 1
+        return rssList.count - 1
     }
     
     /* section 타이틀 */
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Apple Developer News"
+        return rssList[section+1].name
     }
 }
 

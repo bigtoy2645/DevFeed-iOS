@@ -9,17 +9,16 @@
 import Foundation
 
 struct Feed {
-    var title = ""
-    var description = ""
-    var pubDate = ""
-    var link = ""
+    var title: String
+    var date: String
+    var link: String
     var isRead = false
-    var dateFormat = ""
 }
 
 struct RSS {
     let name: String
     let link: String
+    let dateFormat: String
     
     let startTag: String
     let titleTag: String
