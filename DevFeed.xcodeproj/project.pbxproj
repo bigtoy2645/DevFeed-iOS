@@ -17,6 +17,8 @@
 		1A1A652925431B00008829B6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A652825431B00008829B6 /* WebViewController.swift */; };
 		1A1A653325486553008829B6 /* WKWebViewSearch.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A653225486553008829B6 /* WKWebViewSearch.js */; };
 		1A1A6538254B166B008829B6 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A6537254B166B008829B6 /* appIcon.png */; };
+		1A1A653B25598C4C008829B6 /* RSSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A653925598C4C008829B6 /* RSSTableViewCell.swift */; };
+		1A1A653C25598C4C008829B6 /* RSSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A653A25598C4C008829B6 /* RSSTableViewCell.xib */; };
 		1AAD172F252DADEB00A086DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD172E252DADEB00A086DC /* AppDelegate.swift */; };
 		1AAD1731252DADEB00A086DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1730252DADEB00A086DC /* SceneDelegate.swift */; };
 		1AAD1733252DADEB00A086DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1732252DADEB00A086DC /* ViewController.swift */; };
@@ -55,6 +57,8 @@
 		1A1A652825431B00008829B6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1A1A653225486553008829B6 /* WKWebViewSearch.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = WKWebViewSearch.js; sourceTree = "<group>"; };
 		1A1A6537254B166B008829B6 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = res/appIcon.png; sourceTree = "<group>"; };
+		1A1A653925598C4C008829B6 /* RSSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSTableViewCell.swift; sourceTree = "<group>"; };
+		1A1A653A25598C4C008829B6 /* RSSTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RSSTableViewCell.xib; sourceTree = "<group>"; };
 		1AAD172B252DADEB00A086DC /* DevFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAD172E252DADEB00A086DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AAD1730252DADEB00A086DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			children = (
 				1A1A6513253983F2008829B6 /* Feed.swift */,
 				1A1A651B253C9135008829B6 /* FeedTableViewCell.swift */,
+				1A1A653925598C4C008829B6 /* RSSTableViewCell.swift */,
 				1A1A6521253D84BB008829B6 /* SubscribeCell.swift */,
 			);
 			name = Models;
@@ -124,6 +129,7 @@
 				1A1A651C253C9135008829B6 /* FeedTableViewCell.xib */,
 				1AAD1739252DADED00A086DC /* LaunchScreen.storyboard */,
 				1AAD1734252DADEB00A086DC /* Main.storyboard */,
+				1A1A653A25598C4C008829B6 /* RSSTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1A653C25598C4C008829B6 /* RSSTableViewCell.xib in Resources */,
 				1AAD173B252DADED00A086DC /* LaunchScreen.storyboard in Resources */,
 				1A1A651E253C9135008829B6 /* FeedTableViewCell.xib in Resources */,
 				1A1A6538254B166B008829B6 /* appIcon.png in Resources */,
@@ -347,6 +354,7 @@
 				1A1A6514253983F2008829B6 /* Feed.swift in Sources */,
 				1AAD172F252DADEB00A086DC /* AppDelegate.swift in Sources */,
 				1A1A651125398371008829B6 /* FeedViewController.swift in Sources */,
+				1A1A653B25598C4C008829B6 /* RSSTableViewCell.swift in Sources */,
 				1A1A6527253EC03A008829B6 /* AddRSSViewController.swift in Sources */,
 				1A1A6522253D84BB008829B6 /* SubscribeCell.swift in Sources */,
 				1AAD1731252DADEB00A086DC /* SceneDelegate.swift in Sources */,
