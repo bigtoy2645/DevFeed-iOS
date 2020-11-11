@@ -13,6 +13,7 @@ class RSSTableViewCell: UITableViewCell {
     @IBOutlet weak var favicon: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var link: UILabel!
+    @IBOutlet weak var addButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +25,4 @@ class RSSTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
