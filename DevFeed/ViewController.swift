@@ -57,6 +57,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             guard let addRSSVC = self.storyboard?.instantiateViewController(identifier: "AddRSS") as? AddRSSViewController else { return }
+            addRSSVC.rssList = rssList.filter { $0.link.isEmpty == false }
             present(addRSSVC, animated: true, completion: nil)
         } else {
             guard let feedVC = self.storyboard?.instantiateViewController(identifier: "NewsFeed") as? FeedViewController else { return }

@@ -12,6 +12,8 @@ class AddRSSViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tblRSS: UITableView!
     
+    var rssList: [RSS] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,15 +24,21 @@ class AddRSSViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return rssList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RSSCell", for: indexPath) as! RSSTableViewCell
 //                cell.updateValue(feed: feed[indexPath.row])
         
-        // TODO - favicon 다운로드
-//        cell.favicon.image = UIImage(systemName:"circle")
+        // favicon 다운로드
+        // TODO - protocol로 빼기
+        let url = URL(string: "https://www.google.com/s2/favicons?sz=64&domain=" + "\(rssList[indexPath.row].link)")
+        if let data = try? Data(contentsOf: url!) {
+            cell.favicon.image = UIImage(data: data)
+        }
+        cell.title.text = rssList[indexPath.row].name
+        cell.link.text = rssList[indexPath.row].link
         cell.addButton.addTarget(self, action: #selector(addButtonDidTap(_:)), for: .touchUpInside)
         
         return cell
