@@ -10,13 +10,11 @@ import UIKit
 import Foundation
 import WebKit
 
-class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tblFeed: UITableView!
     
+    let rssParser = RSSParser()
     var rss: RSS = RSS(name: "", link: "", dateFormat: "", startTag: "", titleTag: "", dateTag: "", linkTag: "")
-    var feed: [Feed] = []
-    var currentTag: String?
-    var currentFeed = Feed(title: "", date: "", link: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +31,11 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
         backBarButtonItem.tintColor = .label
         self.navigationItem.backBarButtonItem = backBarButtonItem
         
-        // Apple Developer News 파싱
+        // XML 파싱
         DispatchQueue.global().async {
-            guard let encoded = self.rss.link.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: encoded) else { return }
-            
-            let parser = XMLParser(contentsOf: url)
-            parser?.delegate = self
-            
+            self.rss.feed = self.rssParser.parse(rss: self.rss)
             DispatchQueue.main.async {
-                if false == parser?.parse() {
+                if 0 == self.rss.feed.count {
                     self.tblFeed.setEmptyView(title: "Failed to connect network.")
                 }
                 self.tblFeed.reloadData()
@@ -53,61 +47,17 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
         tblFeed.reloadData()
     }
     
-    // MARK: - XMLParserDelegate
-    
-    /* 시작 Tag */
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        currentTag = elementName
-        if currentTag == rss.startTag {
-            currentFeed.title = ""
-            currentFeed.date = ""
-            currentFeed.link = ""
-        }
-    }
-    
-    /* 종료 Tag */
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if elementName == rss.startTag {
-            currentFeed.title = currentFeed.title.replacingOccurrences(of: "&nbsp;", with: " ")
-            let inputFormatter = DateFormatter()
-            let outputFormatter = DateFormatter()
-            
-            inputFormatter.dateFormat = rss.dateFormat
-            outputFormatter.dateStyle = .long
-            if let date = inputFormatter.date(from: currentFeed.date) {
-                currentFeed.date = outputFormatter.string(from: date)
-            }
-            
-            feed.append(currentFeed)
-        }
-        currentTag = nil
-    }
-    
-    /* Tag에 해당하는 문자열 */
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        switch currentTag {
-        case rss.titleTag:
-            currentFeed.title += string
-        case rss.dateTag:
-            currentFeed.date += string
-        case rss.linkTag:
-            currentFeed.link += string
-        default:
-            return
-        }
-    }
-    
     // MARK: - UITableViewDelegate
     
     /* cell 개수 */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feed.count
+        return rss.feed.count
     }
     
     /* cell 그리기 */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-        cell.updateValue(feed: feed[indexPath.row])
+        cell.updateValue(feed: rss.feed[indexPath.row])
         
         // TODO - Feed 형식일 경우 WebView 표시
 //        let str = "<div style=\"font-family: -apple-system, BlinkMacSystemFont, sans-serif;\">" + feed[indexPath.row].description
@@ -121,8 +71,8 @@ class FeedViewController: UIViewController, XMLParserDelegate, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // WebView 표시
         guard let webVC = self.storyboard?.instantiateViewController(identifier: "DetailWebView") as? WebViewController else { return }
-        feed[indexPath.row].isRead = true
-        webVC.feed = feed[indexPath.row]
+        rss.feed[indexPath.row].isRead = true
+        webVC.feed = rss.feed[indexPath.row]
         self.navigationController?.pushViewController(webVC, animated: true)
     }
     

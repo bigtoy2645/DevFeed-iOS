@@ -12,6 +12,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var colRSS: UICollectionView!
     @IBOutlet weak var tblNews: UITableView!
     
+    let rssParser = RSSParser()
     var rssList: [RSS] = [RSS(name: "", link: "", dateFormat: "", startTag: "", titleTag: "", dateTag: "", linkTag: ""),
                           RSS(name: "Apple Developer News", link: "https://developer.apple.com/news/rss/news.rss", dateFormat: "EEE, dd MMM yyyy HH:mm:ss z", startTag: "item", titleTag: "title", dateTag: "pubDate", linkTag: "link"),
                           RSS(name: "Ray Wenderlich", link: "https://www.raywenderlich.com/ios/feed", dateFormat: "yyyy-MM-dd'T'HH:mm:ss'Z'", startTag: "entry", titleTag: "title", dateTag: "updated", linkTag: "id")]
@@ -30,6 +31,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         backBarButtonItem.tintColor = .label
         self.navigationItem.backBarButtonItem = backBarButtonItem
+        
+        DispatchQueue.global().async {
+            for index in 1..<self.rssList.count {
+                self.rssList[index].feed = self.rssParser.parse(rss: self.rssList[index])
+            }
+            DispatchQueue.main.async {
+                self.tblNews.reloadData()
+            }
+        }
     }
     
     // MARK: - UICollectionViewDelegate
@@ -76,10 +86,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     /* cell 그리기 */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-        let feed = Feed(title: "new", date: "2020", link: "", isRead: false)
-        cell.updateValue(feed: feed)
+        if rssList[indexPath.section+1].feed.count > indexPath.row {
+            let feed = rssList[indexPath.section+1].feed[indexPath.row]
+            cell.updateValue(feed: feed)
+            return cell
+        }
         
-        return cell
+        return UITableViewCell()
     }
     
     /* section 개수 */
