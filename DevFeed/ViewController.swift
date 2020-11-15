@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     @IBOutlet weak var colRSS: UICollectionView!
     @IBOutlet weak var tblNews: UITableView!
     
@@ -41,8 +41,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             }
         }
     }
-    
-    // MARK: - UICollectionViewDelegate
+}
+ 
+// MARK: - UICollectionViewDelegate
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     /* cell 개수 */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -75,8 +78,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             self.navigationController?.pushViewController(feedVC, animated: true)
         }
     }
-    
-    // MARK: - UITableViewDelegate
+}
+
+// MARK: - UITableViewDelegate
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     /* cell 개수 */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,6 +99,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         return UITableViewCell()
+    }
+    
+    /* cell 선택 시 */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // WebView 표시
+        guard let webVC = self.storyboard?.instantiateViewController(identifier: "DetailWebView") as? WebViewController else { return }
+        rssList[indexPath.section+1].feed[indexPath.row].isRead = true
+        webVC.feed = rssList[indexPath.section+1].feed[indexPath.row]
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     /* section 개수 */
