@@ -27,6 +27,7 @@
 		1AAD173B252DADED00A086DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD1739252DADED00A086DC /* LaunchScreen.storyboard */; };
 		1AAD1746252DADED00A086DC /* DevFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1745252DADED00A086DC /* DevFeedTests.swift */; };
 		1AAD1751252DADED00A086DC /* DevFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD1750252DADED00A086DC /* DevFeedUITests.swift */; };
+		1ABA2F60256E72D300C59C5E /* RSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA2F5F256E72D300C59C5E /* RSS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		1AAD174C252DADED00A086DC /* DevFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAD1750252DADED00A086DC /* DevFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevFeedUITests.swift; sourceTree = "<group>"; };
 		1AAD1752252DADED00A086DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ABA2F5F256E72D300C59C5E /* RSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				1A1A6513253983F2008829B6 /* Feed.swift */,
 				1A1A651B253C9135008829B6 /* FeedTableViewCell.swift */,
+				1ABA2F5F256E72D300C59C5E /* RSS.swift */,
 				1A1A653925598C4C008829B6 /* RSSTableViewCell.swift */,
 				1A1A6521253D84BB008829B6 /* SubscribeCell.swift */,
 			);
@@ -358,6 +361,7 @@
 				1A1A6527253EC03A008829B6 /* AddRSSViewController.swift in Sources */,
 				1A1A6522253D84BB008829B6 /* SubscribeCell.swift in Sources */,
 				1AAD1731252DADEB00A086DC /* SceneDelegate.swift in Sources */,
+				1ABA2F60256E72D300C59C5E /* RSS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
