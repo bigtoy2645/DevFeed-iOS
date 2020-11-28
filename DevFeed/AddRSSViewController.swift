@@ -40,19 +40,11 @@ class AddRSSViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     /* 추가 버튼 선택 시 동작 */
-    @objc func addButtonDidTap(_ sender: UIButton) {
-        // TODO - cellForRowAt에서 버튼 이미지 변경
-        // sender.setImage(UIImage(systemName:"checkmark"), for: .selected)
-//        guard let indexPath = sender.indexPath else { return }
-//
-//        // Complete 값 변경
-//        if indexPath.section == 0 {
-//            todoScheduled[selectedDate]?[indexPath.row].isCompleted.toggle()
-//        } else {
-//            todoAnytime[indexPath.row].isCompleted.toggle()
-//        }
-//
-//        tblTodo.reloadData()
+    func cellAddButtonDidTap(_ cell: RSSTableViewCell) {
+        // Complete 값 변경
+//        todoAnytime[indexPath.row].isCompleted.toggle()
+
+        tblRSS.reloadData()
     }
     
     // MARK: - UITableViewDelegate
@@ -78,7 +70,7 @@ class AddRSSViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let rssLink = rss.link
         cell.title.text = rss.name
         cell.link.text = rssLink.replacingOccurrences(of: "https://", with: "")
-        cell.addButton.addTarget(self, action: #selector(addButtonDidTap(_:)), for: .touchUpInside)
+        cell.addButtonAction = cellAddButtonDidTap(_:)
         
         return cell
     }
@@ -90,8 +82,9 @@ extension AddRSSViewController: UISearchControllerDelegate, UISearchResultsUpdat
     
     /* 검색 키워드 변경 시 결과 화면 업데이트 */
     func updateSearchResults(for searchController: UISearchController) {
+        let searchKeyword = searchController.searchBar.text!.lowercased()
         filteredRSSList = rssList.filter({ (rss: RSS) -> Bool in
-            return rss.name.lowercased().contains(searchController.searchBar.text!.lowercased())
+            return rss.name.lowercased().contains(searchKeyword) || rss.link.lowercased().contains(searchKeyword)
         })
         
         resultVC.tableView.reloadData()

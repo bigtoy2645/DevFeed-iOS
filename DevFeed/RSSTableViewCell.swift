@@ -15,6 +15,8 @@ class RSSTableViewCell: UITableViewCell {
     @IBOutlet weak var link: UILabel!
     @IBOutlet weak var addButton: UIButton!
     
+    var addButtonAction: ((RSSTableViewCell) -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +27,9 @@ class RSSTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func addButtonDidTap(_ sender: UIButton) {
+        addButtonAction?(self)
+    }
+    
 }
